@@ -1,0 +1,12 @@
+bchsv-insight:
+  build: .
+  dockerfile: Dockerfile
+  #image: blockbook-bsv-insight
+  container_name: blockbook
+  ports:
+    - "9046:9046"
+    - "9146:9146"
+  volumes:
+    - /data/bchssvinsight/data:/opt/coins/data/bcashsv/blockbook/db
+    - /data/bchssvinsight/logs:/opt/coins/blockbook/bcashsv/logs
+  restart: always
